@@ -1,0 +1,32 @@
+//
+//  FamilyDesign
+//
+//  Created by lyc on 2020/5/18.
+//  Copyright © 2020 知行. All rights reserved.
+//
+
+#import "UIApplication+KeyboardFrame.h"
+
+@implementation UIApplication (KeyboardFrame)
+static CGRect _keyboardFrame = (CGRect){ (CGPoint){ 0.0f, 0.0f }, (CGSize){ 0.0f, 0.0f } };
+
+- (CGRect)keyboardFrame {
+    return _keyboardFrame;
+}
+
++ (void)load
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardDidShowNotification object:nil queue:nil usingBlock:^(NSNotification *note)
+     {
+         _keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+     }];
+    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardDidChangeFrameNotification object:nil queue:nil usingBlock:^(NSNotification *note)
+     {
+         _keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+     }];
+    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardDidHideNotification object:nil queue:nil usingBlock:^(NSNotification *note)
+     {
+         _keyboardFrame = CGRectZero;
+     }];
+}
+@end
