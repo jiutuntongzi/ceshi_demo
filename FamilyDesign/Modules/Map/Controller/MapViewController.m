@@ -10,6 +10,8 @@
 #import "MapViewModel.h"
 #import "MapView.h"
 #import "CustomPaopaoView.h"
+#import "MapInfoListView.h"
+#import "MapInfoListViewModel.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <BMKLocationkit/BMKLocationComponent.h>
@@ -17,7 +19,9 @@
 @interface MapViewController ()<BMKMapViewDelegate,BMKLocationManagerDelegate>
 
 @property(nonatomic, strong) MapViewModel *mapViewModel;
+@property(nonatomic, strong) MapInfoListViewModel *mapInfoListViewModel;
 @property(nonatomic, strong) MapView *myMapView;
+@property(nonatomic, strong) MapInfoListView *mapInfoListView;
 @property (nonatomic, strong) BMKMapView *mapView;
 
 @property (nonatomic, strong) BMKUserLocation *userLocation; //当前位置对象
@@ -139,9 +143,7 @@
             annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation
                                                               reuseIdentifier:reuseIndetifier];
         }
-
 //        annotationView.image = [UIImage imageNamed:@"dingwei.png"];
-
         annotationView.canShowCallout = YES;
         CustomPaopaoView *customPopView = [[CustomPaopaoView alloc] init];
         customPopView.frame = CGRectMake(0, 0, 70.f, 70.0f);
@@ -155,11 +157,25 @@
         pView.frame = customPopView.frame;
         annotationView.paopaoView = pView;
         annotationView.selected = YES;
+        annotationView.canShowCallout = YES;
         annotationView.calloutOffset = CGPointMake(0, 40);
         annotationView.hidePaopaoWhenSingleTapOnMap = NO;
+        
+        //添加单击手势
+        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesAction)];
+        [customPopView addGestureRecognizer:tapGes];
+        customPopView.userInteractionEnabled = YES;
+        
+        
         return annotationView;
     }
     return nil;
+}
+- (void)tapGesAction{
+    [self.view addSubview:self.mapInfoListView];
+    [UIView animateWithDuration:1 animations:^{
+        self.mapInfoListView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREENH_HEIGHT);
+    }];
 }
 #pragma mark - lazy
 - (MapView *)myMapView{
@@ -170,7 +186,14 @@
     return _myMapView;
 }
 
-#pragma mark - Lazy loading
+- (MapInfoListView *)mapInfoListView{
+    if (nil == _mapInfoListView) {
+        _mapInfoListView = [[MapInfoListView alloc] initWithViewModel:self.mapInfoListViewModel];
+        _mapInfoListView.frame = CGRectMake(0, SCREENH_HEIGHT, SCREEN_WIDTH, SCREENH_HEIGHT);
+    }
+    return _mapInfoListView;
+}
+
 - (BMKLocationManager *)locationManager {
     if (!_locationManager) {
         //初始化BMKLocationManager类的实例

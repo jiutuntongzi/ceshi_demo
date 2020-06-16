@@ -31,4 +31,9 @@
 
 //button
 #import "UIButton+JKImagePosition.h"
+
+//tableView
+#import "UITableViewCell+SMKConfigure.h"
+//#import "UITableView+FDTemplateLay"
+#import <UITableView+FDTemplateLayoutCell.h>
 #endif /* PrefixHeader_pch */

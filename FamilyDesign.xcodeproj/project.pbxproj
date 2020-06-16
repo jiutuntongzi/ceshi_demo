@@ -21,6 +21,16 @@
 		004BD6BB24988EDD005A41E3 /* shizhong.png in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6B924988EDD005A41E3 /* shizhong.png */; };
 		004BD6BD24988EE2005A41E3 /* lingdang.png in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6BC24988EE2005A41E3 /* lingdang.png */; };
 		004BD6BE24988EE2005A41E3 /* lingdang.png in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6BC24988EE2005A41E3 /* lingdang.png */; };
+		004BD6C12498AF5A005A41E3 /* MapInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6C02498AF5A005A41E3 /* MapInfoListView.m */; };
+		004BD6C22498AF5A005A41E3 /* MapInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6C02498AF5A005A41E3 /* MapInfoListView.m */; };
+		004BD6C62498AF94005A41E3 /* MapInfoListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6C52498AF94005A41E3 /* MapInfoListViewModel.m */; };
+		004BD6C72498AF94005A41E3 /* MapInfoListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6C52498AF94005A41E3 /* MapInfoListViewModel.m */; };
+		004BD6CE2498C18B005A41E3 /* MapInfoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6CC2498C18B005A41E3 /* MapInfoListTableViewCell.m */; };
+		004BD6CF2498C18B005A41E3 /* MapInfoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6CC2498C18B005A41E3 /* MapInfoListTableViewCell.m */; };
+		004BD6D02498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6CD2498C18B005A41E3 /* MapInfoListTableViewCell.xib */; };
+		004BD6D12498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6CD2498C18B005A41E3 /* MapInfoListTableViewCell.xib */; };
+		004BD6D52498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */; };
+		004BD6D62498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */; };
 		004E2FB924722C4200212764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857DD247218D000DE8CFD /* AppDelegate.m */; };
 		004E2FBA24722C4200212764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857EE247218D200DE8CFD /* main.m */; };
 		004E2FBB24722C4200212764 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857E0247218D000DE8CFD /* SceneDelegate.m */; };
@@ -408,6 +418,16 @@
 		004BD6B624988ED9005A41E3 /* chouti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chouti.png; sourceTree = "<group>"; };
 		004BD6B924988EDD005A41E3 /* shizhong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shizhong.png; sourceTree = "<group>"; };
 		004BD6BC24988EE2005A41E3 /* lingdang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lingdang.png; sourceTree = "<group>"; };
+		004BD6BF2498AF5A005A41E3 /* MapInfoListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapInfoListView.h; sourceTree = "<group>"; };
+		004BD6C02498AF5A005A41E3 /* MapInfoListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapInfoListView.m; sourceTree = "<group>"; };
+		004BD6C42498AF94005A41E3 /* MapInfoListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapInfoListViewModel.h; sourceTree = "<group>"; };
+		004BD6C52498AF94005A41E3 /* MapInfoListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapInfoListViewModel.m; sourceTree = "<group>"; };
+		004BD6CB2498C18B005A41E3 /* MapInfoListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapInfoListTableViewCell.h; sourceTree = "<group>"; };
+		004BD6CC2498C18B005A41E3 /* MapInfoListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapInfoListTableViewCell.m; sourceTree = "<group>"; };
+		004BD6CD2498C18B005A41E3 /* MapInfoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapInfoListTableViewCell.xib; sourceTree = "<group>"; };
+		004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
+		004BD6D42498C4C3005A41E3 /* UITableViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
+		004BD6D72498C73B005A41E3 /* SMKViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocol.h; sourceTree = "<group>"; };
 		004E2FC524722C4200212764 /* FamilyDesign_ForTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyDesign_ForTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004E2FC624722C4200212764 /* FamilyDesign_ForTest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = FamilyDesign_ForTest.plist; path = "/Users/lyc/Desktop/2020.6月启动项目框架/FamilyDesign/FamilyDesign_ForTest.plist"; sourceTree = "<absolute>"; };
 		004E2FD12472672F00212764 /* ValueMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueMacro.h; sourceTree = "<group>"; };
@@ -822,6 +842,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004BD6C32498AF75005A41E3 /* SubViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				004BD6C42498AF94005A41E3 /* MapInfoListViewModel.h */,
+				004BD6C52498AF94005A41E3 /* MapInfoListViewModel.m */,
+			);
+			path = SubViewModel;
+			sourceTree = "<group>";
+		};
+		004BD6D22498C476005A41E3 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				004BD6D42498C4C3005A41E3 /* UITableViewCell+SMKConfigure.h */,
+				004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		004E2FB22472228900212764 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,6 +979,7 @@
 				0051365424751DB700111152 /* ZXBaseViewModelProtocol.h */,
 				0051365524751DDC00111152 /* ZXBaseViewControllerProtocol.h */,
 				00A948DE24777964002358AB /* ZXBaseViewProtocol.h */,
+				004BD6D72498C73B005A41E3 /* SMKViewModelProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1065,6 +1104,7 @@
 			children = (
 				0073D97B2497A55A008DDEC6 /* MapViewModel.h */,
 				0073D97C2497A55A008DDEC6 /* MapViewModel.m */,
+				004BD6C32498AF75005A41E3 /* SubViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1084,6 +1124,11 @@
 				0073D98A2497A912008DDEC6 /* MapHeaderView.m */,
 				004BD6A3249877B5005A41E3 /* CustomPaopaoView.h */,
 				004BD6A4249877B5005A41E3 /* CustomPaopaoView.m */,
+				004BD6BF2498AF5A005A41E3 /* MapInfoListView.h */,
+				004BD6C02498AF5A005A41E3 /* MapInfoListView.m */,
+				004BD6CB2498C18B005A41E3 /* MapInfoListTableViewCell.h */,
+				004BD6CC2498C18B005A41E3 /* MapInfoListTableViewCell.m */,
+				004BD6CD2498C18B005A41E3 /* MapInfoListTableViewCell.xib */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -1175,6 +1220,7 @@
 		00BE690E2484D6400075A81B /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				004BD6D22498C476005A41E3 /* UITableView */,
 				00BE690F2484D6400075A81B /* UIImage */,
 				00BE69222484D6400075A81B /* UILable */,
 				00BE692B2484D6400075A81B /* UIScrollView */,
@@ -2061,6 +2107,7 @@
 				004BD6A224986E1C005A41E3 /* dingwei-3.png in Resources */,
 				00CFAFA224862A3100EBF2CC /* gift_select.png in Resources */,
 				0073D99A24984173008DDEC6 /* 61b9bb02f47247e49a562b0c537c0229.sty in Resources */,
+				004BD6D12498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */,
 				0073D9A0249844C7008DDEC6 /* c02d0191b4ba5d47087ef30e250cad86.sty in Resources */,
 				0073D99424983D3C008DDEC6 /* 41b93562f9d78ec7b9243c0470c0aba0.sty in Resources */,
 				004BD6B824988ED9005A41E3 /* chouti.png in Resources */,
@@ -2077,6 +2124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				004BD6BD24988EE2005A41E3 /* lingdang.png in Resources */,
+				004BD6D02498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */,
 				004BD6B424988E80005A41E3 /* liwu.png in Resources */,
 				0073D99324983D3C008DDEC6 /* 41b93562f9d78ec7b9243c0470c0aba0.sty in Resources */,
 				004BD69E24986A91005A41E3 /* dingwei.png in Resources */,
@@ -2242,6 +2290,7 @@
 				00BE6B1F2484D6420075A81B /* NSObject+EasyCopy.m in Sources */,
 				00BE6AC72484D6410075A81B /* UITextField+Select.m in Sources */,
 				00BE6B072484D6410075A81B /* NSString+MIME.m in Sources */,
+				004BD6C22498AF5A005A41E3 /* MapInfoListView.m in Sources */,
 				00BE6AAF2484D6410075A81B /* UIViewController+TopBarMessage.m in Sources */,
 				00BE6A8D2484D6410075A81B /* UIView+Frame.m in Sources */,
 				00BE6ABD2484D6410075A81B /* UIViewController+BackButtonItemTitle.m in Sources */,
@@ -2264,6 +2313,7 @@
 				00BE6B3F2484D6420075A81B /* CAAnimation+Blocks.m in Sources */,
 				00A948C62477785D002358AB /* ZXBaseCollectionViewCell.m in Sources */,
 				00BE6B1D2484D6420075A81B /* NSObject+AppInfo.m in Sources */,
+				004BD6C72498AF94005A41E3 /* MapInfoListViewModel.m in Sources */,
 				00A948F124777FEF002358AB /* ZXBaseImageView.m in Sources */,
 				004E300D24738CFF00212764 /* ZXBaseViewModel.m in Sources */,
 				00BE6A492484D6410075A81B /* UIImage+Alpha.m in Sources */,
@@ -2286,8 +2336,10 @@
 				00BE6ADF2484D6410075A81B /* NSData+SDDataCache.m in Sources */,
 				00A948DB247778B8002358AB /* ZXBaseTableViewHeaderFooterView.m in Sources */,
 				00BE6AF52484D6410075A81B /* NSString+RemoveEmoji.m in Sources */,
+				004BD6D62498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m in Sources */,
 				00BE6AE12484D6410075A81B /* NSData+Hash.m in Sources */,
 				00BE6B2B2484D6420075A81B /* NSDateFormatter+Make.m in Sources */,
+				004BD6CF2498C18B005A41E3 /* MapInfoListTableViewCell.m in Sources */,
 				004E2FBA24722C4200212764 /* main.m in Sources */,
 				00BE6AC12484D6410075A81B /* UITextField+History.m in Sources */,
 				00BE6ACF2484D6410075A81B /* MBProgressHUD+MP.m in Sources */,
@@ -2381,6 +2433,7 @@
 				00BE6A5C2484D6410075A81B /* UIScrollView+Addition.m in Sources */,
 				00F857DE247218D000DE8CFD /* AppDelegate.m in Sources */,
 				00BE6B2E2484D6420075A81B /* NSDate+Formatter.m in Sources */,
+				004BD6D52498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m in Sources */,
 				0065615B24977A7700ACFD5A /* UIButton+TouchAreaInsets.m in Sources */,
 				004E300C24738CFF00212764 /* ZXBaseViewModel.m in Sources */,
 				00BE6B462484D6420075A81B /* CATransaction+AnimateWithDuration.m in Sources */,
@@ -2431,6 +2484,7 @@
 				00BE6AB82484D6410075A81B /* UIViewController+DDPopUpViewController.m in Sources */,
 				00BE6A8A2484D6410075A81B /* UIView+ViewController.m in Sources */,
 				00BE6A662484D6410075A81B /* UIApplication+Permissions.m in Sources */,
+				004BD6C12498AF5A005A41E3 /* MapInfoListView.m in Sources */,
 				00BE6B3E2484D6420075A81B /* CAAnimation+Blocks.m in Sources */,
 				00A948EA24777CED002358AB /* UIViewController+WLNavigationItem.m in Sources */,
 				00BE6B1C2484D6420075A81B /* NSObject+AppInfo.m in Sources */,
@@ -2497,8 +2551,10 @@
 				004E2FE2247276E800212764 /* PPNetworkHelper.m in Sources */,
 				00BE6A842484D6410075A81B /* UIView+Nib.m in Sources */,
 				00CFAF932486248A00EBF2CC /* MainViewController.m in Sources */,
+				004BD6CE2498C18B005A41E3 /* MapInfoListTableViewCell.m in Sources */,
 				00BE6AA82484D6410075A81B /* UIImageView+BetterFace.m in Sources */,
 				00BE6ACC2484D6410075A81B /* UIImage+RoundedCorner.m in Sources */,
+				004BD6C62498AF94005A41E3 /* MapInfoListViewModel.m in Sources */,
 				00BE6ADC2484D6410075A81B /* NSNotificationCenter+MainThread.m in Sources */,
 				00BE6A4A2484D6410075A81B /* UIImage+RoundedCorner.m in Sources */,
 				00BE6B382484D6420075A81B /* NSDate+Extension.m in Sources */,
