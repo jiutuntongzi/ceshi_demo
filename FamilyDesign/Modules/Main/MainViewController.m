@@ -55,6 +55,7 @@
         _mainView.button.ba_buttonActionBlock = ^(UIButton * _Nonnull button) {
             @strongify(self);
             MapViewController *mapVC = [[MapViewController alloc] init];
+//            mapVC.
             mapVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:mapVC animated:YES];
         };
