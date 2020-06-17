@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MapViewController : ZXBaseViewController
 
-@property(nonatomic, strong) AreaBKModel *areaModel;
+@property(nonatomic, strong) NSArray <AreaBKModel *> *areaModelArray;
 
 @end
 

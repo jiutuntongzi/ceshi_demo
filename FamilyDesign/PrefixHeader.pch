@@ -15,12 +15,14 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 #import <CYLTabBarController.h>
-
+#import "MGJRouter.h"
 #import <MBProgressHUD.h>
 #import "MBProgressHUD+MP.h"
 #import "MJExtension.h"
 #import "NSArray+YYAdd.h"
+#import "ManagerRouter.h"
 
+#import "RouterMacro.h"
 #import "ValueMacro.h"
 #import "FunctionMacro.h"
 #import "ValueMacro.h"
