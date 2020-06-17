@@ -6,7 +6,8 @@ abstract_target 'Default' do
   pod 'AFNetworking', '~>3.0'
   pod 'ReactiveCocoa', '~> 2.5'
   pod 'SDWebImage', '~> 3.7.5'
-  pod 'JSONModel', '~> 1.0.1'
+#  pod 'JSONModel', '~> 1.0.1'
+  pod 'MJExtension'
   pod 'Masonry','~>0.6.1'
   pod 'MBProgressHUD', '~> 0.9'
   pod 'YTKNetwork'  #猿题库网络封装

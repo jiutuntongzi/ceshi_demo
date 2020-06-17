@@ -67,7 +67,7 @@ static NSString * const kMyCellIndentifier = @"MapInfoListTableViewCell";
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180;
+    return 160;
     
     id item = [self itemAtIndexPath:indexPath] ;
     

@@ -115,3 +115,10 @@
 #define IOS8_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define IOS7_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #endif /* ToolMacro_h */
+
+
+#define KScaleWidth(width) ((width)*(SCREEN_WIDTH/375.f))
+#define IsIphone6P          SCREEN_WIDTH==414
+#define SizeScale           (IsIphone6P ? 1.5 : 1)
+#define kFontSize(value)    value*SizeScale
+#define kFont(value)        [UIFont systemFontOfSize:value*SizeScale]

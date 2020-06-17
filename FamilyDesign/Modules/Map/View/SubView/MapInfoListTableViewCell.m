@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+//    self.titleLable.font = kFont(17);
+//    [self adaptScreenWidthWithType:BSAdaptScreenWidthTypeAll exceptViews:nil];
     // Initialization code
 }
 

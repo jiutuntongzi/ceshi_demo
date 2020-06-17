@@ -10,10 +10,14 @@
 #import "MapViewController.h"
 #import "MainView.h"
 #import "MainViewModel.h"
+#import "JsonFileManager.h"
+#import "AreaBKModel.h"
 @interface MainViewController ()
 
 @property(nonatomic, strong) MainView *mainView;
 @property(nonatomic, strong) MainViewModel *mainViewModel;
+
+@property(nonatomic, strong) NSArray *areaArray;
 
 @end
 
@@ -41,10 +45,18 @@
 
 - (void)congigInit{
     self.leftBarBtnHidden = YES;
+    self.areaArray = [self getJsonData];
+    AreaBKModel *moelq =self.areaArray[0];
+    ZLog(@"%@",moelq);
 }
 
 - (void)bindViewModel{
     [super bindViewModel];
+}
+
+- (NSArray *)getJsonData{
+    NSArray *jsonArray = [JsonFileManager loadDataWithJsonFileName:@"areaInfo"];
+    return [AreaBKModel mj_objectArrayWithKeyValuesArray:jsonArray];
 }
 
 #pragma mark - lazy
@@ -62,6 +74,12 @@
     return _mainView;
 }
 
+- (NSArray *)areaArray{
+    if (nil == _areaArray) {
+        _areaArray = [NSArray new];
+    }
+    return _areaArray;
+}
 /*
 #pragma mark - Navigation
 

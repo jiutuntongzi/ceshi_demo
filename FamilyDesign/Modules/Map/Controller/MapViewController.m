@@ -62,6 +62,7 @@
 - (void)initMapUI{
     _mapView = [[BMKMapView alloc]initWithFrame:self.myMapView.bounds];
     _mapView.delegate = self;
+    _mapView.zoomLevel = 5;
 //    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
     //开启定位服务
     [self.locationManager startUpdatingLocation];
@@ -133,6 +134,13 @@
     
 }
 
+- (void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.mapInfoListView.frame = CGRectMake(0, SCREENH_HEIGHT, SCREEN_WIDTH, SCREENH_HEIGHT);
+    } completion:^(BOOL finished) {
+        [self.mapInfoListView removeFromSuperview];
+    }];
+}
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
     if ([annotation isKindOfClass:[BMKPointAnnotation class]])
     {
@@ -173,8 +181,8 @@
 }
 - (void)tapGesAction{
     [self.view addSubview:self.mapInfoListView];
-    [UIView animateWithDuration:1 animations:^{
-        self.mapInfoListView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREENH_HEIGHT);
+    [UIView animateWithDuration:0.5 animations:^{
+        self.mapInfoListView.frame = CGRectMake(0, 150, SCREEN_WIDTH, SCREENH_HEIGHT);
     }];
 }
 #pragma mark - lazy

@@ -31,6 +31,22 @@
 		004BD6D12498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6CD2498C18B005A41E3 /* MapInfoListTableViewCell.xib */; };
 		004BD6D52498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */; };
 		004BD6D62498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */; };
+		004BD6DA2498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6D92498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m */; };
+		004BD6DB2498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6D92498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m */; };
+		004BD6DE2498F81A005A41E3 /* UIView+AdaptScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6DD2498F81A005A41E3 /* UIView+AdaptScreen.m */; };
+		004BD6DF2498F81A005A41E3 /* UIView+AdaptScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6DD2498F81A005A41E3 /* UIView+AdaptScreen.m */; };
+		004BD6E42498FA91005A41E3 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6E32498FA91005A41E3 /* girl.png */; };
+		004BD6E52498FA91005A41E3 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6E32498FA91005A41E3 /* girl.png */; };
+		004BD6E824998D02005A41E3 /* areaInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6E724998D02005A41E3 /* areaInfo.json */; };
+		004BD6E924998D02005A41E3 /* areaInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 004BD6E724998D02005A41E3 /* areaInfo.json */; };
+		004BD6ED24998D8F005A41E3 /* JsonFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6EC24998D8F005A41E3 /* JsonFileManager.m */; };
+		004BD6EE24998D8F005A41E3 /* JsonFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6EC24998D8F005A41E3 /* JsonFileManager.m */; };
+		004BD6F224999247005A41E3 /* AreaBKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F124999247005A41E3 /* AreaBKModel.m */; };
+		004BD6F324999247005A41E3 /* AreaBKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F124999247005A41E3 /* AreaBKModel.m */; };
+		004BD6F624999326005A41E3 /* AreaBKPlaceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F524999326005A41E3 /* AreaBKPlaceInfoModel.m */; };
+		004BD6F724999326005A41E3 /* AreaBKPlaceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F524999326005A41E3 /* AreaBKPlaceInfoModel.m */; };
+		004BD6FA2499933D005A41E3 /* AreaBKSiteInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F92499933D005A41E3 /* AreaBKSiteInfoModel.m */; };
+		004BD6FB2499933D005A41E3 /* AreaBKSiteInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F92499933D005A41E3 /* AreaBKSiteInfoModel.m */; };
 		004E2FB924722C4200212764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857DD247218D000DE8CFD /* AppDelegate.m */; };
 		004E2FBA24722C4200212764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857EE247218D200DE8CFD /* main.m */; };
 		004E2FBB24722C4200212764 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857E0247218D000DE8CFD /* SceneDelegate.m */; };
@@ -428,6 +444,20 @@
 		004BD6D32498C4C3005A41E3 /* UITableViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
 		004BD6D42498C4C3005A41E3 /* UITableViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
 		004BD6D72498C73B005A41E3 /* SMKViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocol.h; sourceTree = "<group>"; };
+		004BD6D82498F74C005A41E3 /* NSLayoutConstraint+ForXIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+ForXIB.h"; sourceTree = "<group>"; };
+		004BD6D92498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+ForXIB.m"; sourceTree = "<group>"; };
+		004BD6DC2498F81A005A41E3 /* UIView+AdaptScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AdaptScreen.h"; sourceTree = "<group>"; };
+		004BD6DD2498F81A005A41E3 /* UIView+AdaptScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AdaptScreen.m"; sourceTree = "<group>"; };
+		004BD6E32498FA91005A41E3 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
+		004BD6E724998D02005A41E3 /* areaInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = areaInfo.json; sourceTree = "<group>"; };
+		004BD6EB24998D8F005A41E3 /* JsonFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonFileManager.h; sourceTree = "<group>"; };
+		004BD6EC24998D8F005A41E3 /* JsonFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonFileManager.m; sourceTree = "<group>"; };
+		004BD6F024999247005A41E3 /* AreaBKModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaBKModel.h; sourceTree = "<group>"; };
+		004BD6F124999247005A41E3 /* AreaBKModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaBKModel.m; sourceTree = "<group>"; };
+		004BD6F424999326005A41E3 /* AreaBKPlaceInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaBKPlaceInfoModel.h; sourceTree = "<group>"; };
+		004BD6F524999326005A41E3 /* AreaBKPlaceInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaBKPlaceInfoModel.m; sourceTree = "<group>"; };
+		004BD6F82499933D005A41E3 /* AreaBKSiteInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaBKSiteInfoModel.h; sourceTree = "<group>"; };
+		004BD6F92499933D005A41E3 /* AreaBKSiteInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaBKSiteInfoModel.m; sourceTree = "<group>"; };
 		004E2FC524722C4200212764 /* FamilyDesign_ForTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyDesign_ForTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004E2FC624722C4200212764 /* FamilyDesign_ForTest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = FamilyDesign_ForTest.plist; path = "/Users/lyc/Desktop/2020.6月启动项目框架/FamilyDesign/FamilyDesign_ForTest.plist"; sourceTree = "<absolute>"; };
 		004E2FD12472672F00212764 /* ValueMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueMacro.h; sourceTree = "<group>"; };
@@ -860,6 +890,36 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
+		004BD6E624998CF5005A41E3 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				004BD6E724998D02005A41E3 /* areaInfo.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		004BD6EA24998D57005A41E3 /* ManagerHelp */ = {
+			isa = PBXGroup;
+			children = (
+				004BD6EB24998D8F005A41E3 /* JsonFileManager.h */,
+				004BD6EC24998D8F005A41E3 /* JsonFileManager.m */,
+			);
+			path = ManagerHelp;
+			sourceTree = "<group>";
+		};
+		004BD6EF24998EE9005A41E3 /* ManagerModel */ = {
+			isa = PBXGroup;
+			children = (
+				004BD6F024999247005A41E3 /* AreaBKModel.h */,
+				004BD6F124999247005A41E3 /* AreaBKModel.m */,
+				004BD6F424999326005A41E3 /* AreaBKPlaceInfoModel.h */,
+				004BD6F524999326005A41E3 /* AreaBKPlaceInfoModel.m */,
+				004BD6F82499933D005A41E3 /* AreaBKSiteInfoModel.h */,
+				004BD6F92499933D005A41E3 /* AreaBKSiteInfoModel.m */,
+			);
+			path = ManagerModel;
+			sourceTree = "<group>";
+		};
 		004E2FB22472228900212764 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +952,8 @@
 		004E2FC8247231FF00212764 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				004BD6EF24998EE9005A41E3 /* ManagerModel */,
+				004BD6E624998CF5005A41E3 /* Json */,
 				0073D99124983D21008DDEC6 /* mapStyleFile */,
 				00CFAF98248629AC00EBF2CC /* resource */,
 			);
@@ -901,6 +963,7 @@
 		004E2FCE247265F700212764 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				004BD6EA24998D57005A41E3 /* ManagerHelp */,
 				004E30032473856900212764 /* OpenUDID */,
 				004E2FB22472228900212764 /* NetWork */,
 			);
@@ -1136,6 +1199,7 @@
 		0073D98D249839CE008DDEC6 /* map */ = {
 			isa = PBXGroup;
 			children = (
+				004BD6E32498FA91005A41E3 /* girl.png */,
 				004BD6A024986E1C005A41E3 /* dingwei-3.png */,
 				004BD69D24986A90005A41E3 /* dingwei.png */,
 			);
@@ -1391,6 +1455,8 @@
 				00BE69712484D6410075A81B /* UIView+Frame.h */,
 				00BE69722484D6410075A81B /* UIView+Animation.h */,
 				00BE69732484D6410075A81B /* UIView+Screenshot.m */,
+				004BD6DC2498F81A005A41E3 /* UIView+AdaptScreen.h */,
+				004BD6DD2498F81A005A41E3 /* UIView+AdaptScreen.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1747,6 +1813,8 @@
 			children = (
 				00BE6A372484D6410075A81B /* CALayer+UIColor.h */,
 				00BE6A382484D6410075A81B /* CALayer+UIColor.m */,
+				004BD6D82498F74C005A41E3 /* NSLayoutConstraint+ForXIB.h */,
+				004BD6D92498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -2098,6 +2166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				004E2FBF24722C4200212764 /* LaunchScreen.storyboard in Resources */,
+				004BD6E52498FA91005A41E3 /* girl.png in Resources */,
 				00BE6B2D2484D6420075A81B /* NSDateTimeAgo.bundle in Resources */,
 				00CFAFA024862A3100EBF2CC /* gift.png in Resources */,
 				004BD6BB24988EDD005A41E3 /* shizhong.png in Resources */,
@@ -2108,6 +2177,7 @@
 				00CFAFA224862A3100EBF2CC /* gift_select.png in Resources */,
 				0073D99A24984173008DDEC6 /* 61b9bb02f47247e49a562b0c537c0229.sty in Resources */,
 				004BD6D12498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */,
+				004BD6E924998D02005A41E3 /* areaInfo.json in Resources */,
 				0073D9A0249844C7008DDEC6 /* c02d0191b4ba5d47087ef30e250cad86.sty in Resources */,
 				0073D99424983D3C008DDEC6 /* 41b93562f9d78ec7b9243c0470c0aba0.sty in Resources */,
 				004BD6B824988ED9005A41E3 /* chouti.png in Resources */,
@@ -2125,6 +2195,7 @@
 			files = (
 				004BD6BD24988EE2005A41E3 /* lingdang.png in Resources */,
 				004BD6D02498C18B005A41E3 /* MapInfoListTableViewCell.xib in Resources */,
+				004BD6E824998D02005A41E3 /* areaInfo.json in Resources */,
 				004BD6B424988E80005A41E3 /* liwu.png in Resources */,
 				0073D99324983D3C008DDEC6 /* 41b93562f9d78ec7b9243c0470c0aba0.sty in Resources */,
 				004BD69E24986A91005A41E3 /* dingwei.png in Resources */,
@@ -2135,6 +2206,7 @@
 				004BD6A124986E1C005A41E3 /* dingwei-3.png in Resources */,
 				0073D99624983E9E008DDEC6 /* 1b7ae8809bf78fca172396634d9c7eba.sty in Resources */,
 				004BD6B724988ED9005A41E3 /* chouti.png in Resources */,
+				004BD6E42498FA91005A41E3 /* girl.png in Resources */,
 				004BD6BA24988EDD005A41E3 /* shizhong.png in Resources */,
 				00CFAFA124862A3100EBF2CC /* gift_select.png in Resources */,
 				0073D99C24984324008DDEC6 /* d4a7d65f24c6aa2e25be0e6aac168c54.sty in Resources */,
@@ -2271,6 +2343,7 @@
 				00A948D9247778B8002358AB /* ZXBaseTableViewViewController.m in Sources */,
 				00BE6A9D2484D6410075A81B /* UIBarButtonItem+Action.m in Sources */,
 				00BE6AF12484D6410075A81B /* NSString+Pinyin.m in Sources */,
+				004BD6F724999326005A41E3 /* AreaBKPlaceInfoModel.m in Sources */,
 				00BE6AAD2484D6410075A81B /* UIViewController+BlockSegue.m in Sources */,
 				00BE6B0D2484D6410075A81B /* NSUserDefaults+SafeAccess.m in Sources */,
 				00BE6A3D2484D6410075A81B /* UIImage+Blur.m in Sources */,
@@ -2287,7 +2360,9 @@
 				00BE6B212484D6420075A81B /* NSObject+Blocks.m in Sources */,
 				00BE6A952484D6410075A81B /* UIView+Find.m in Sources */,
 				00BE6A532484D6410075A81B /* UILabel+AutoSize.m in Sources */,
+				004BD6DF2498F81A005A41E3 /* UIView+AdaptScreen.m in Sources */,
 				00BE6B1F2484D6420075A81B /* NSObject+EasyCopy.m in Sources */,
+				004BD6F324999247005A41E3 /* AreaBKModel.m in Sources */,
 				00BE6AC72484D6410075A81B /* UITextField+Select.m in Sources */,
 				00BE6B072484D6410075A81B /* NSString+MIME.m in Sources */,
 				004BD6C22498AF5A005A41E3 /* MapInfoListView.m in Sources */,
@@ -2327,6 +2402,7 @@
 				00BE6B432484D6420075A81B /* CAShapeLayer+UIBezierPath.m in Sources */,
 				0065616224977A7700ACFD5A /* UIButton+CountDown.m in Sources */,
 				00BE6AEF2484D6410075A81B /* NSString+Encrypt.m in Sources */,
+				004BD6EE24998D8F005A41E3 /* JsonFileManager.m in Sources */,
 				00CFAF8C24861B7900EBF2CC /* MineViewController.m in Sources */,
 				00BE6B172484D6420075A81B /* NSObject+AutoCoding.m in Sources */,
 				00CFAF8824861B6D00EBF2CC /* SettingViewController.m in Sources */,
@@ -2360,6 +2436,7 @@
 				00BE6AE92484D6410075A81B /* NSString+Hash.m in Sources */,
 				00BE6AB32484D6410075A81B /* UIViewController+StoreKit.m in Sources */,
 				00BE6A592484D6410075A81B /* UIScrollView+EmptyDataSet.m in Sources */,
+				004BD6DB2498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m in Sources */,
 				00BE6A7F2484D6410075A81B /* UIColor+Web.m in Sources */,
 				00BE6B052484D6410075A81B /* NSString+Size.m in Sources */,
 				00BE6AA72484D6410075A81B /* UIImageView+Addition.m in Sources */,
@@ -2382,6 +2459,7 @@
 				00BE6A7B2484D6410075A81B /* UIColor+HEX.m in Sources */,
 				00BE6A872484D6410075A81B /* UIView+CustomBorder.m in Sources */,
 				00BE6AED2484D6410075A81B /* NSString+RegexCategory.m in Sources */,
+				004BD6FB2499933D005A41E3 /* AreaBKSiteInfoModel.m in Sources */,
 				00BE6A4F2484D6410075A81B /* UILabel+SuggestSize.m in Sources */,
 				00A948D7247778B8002358AB /* ZXBaseTableView.m in Sources */,
 				004E2FBB24722C4200212764 /* SceneDelegate.m in Sources */,
@@ -2466,6 +2544,7 @@
 				0073D9802497A56E008DDEC6 /* MyMapModel.m in Sources */,
 				00BE6B1E2484D6420075A81B /* NSObject+EasyCopy.m in Sources */,
 				00BE6AC62484D6410075A81B /* UITextField+Select.m in Sources */,
+				004BD6DE2498F81A005A41E3 /* UIView+AdaptScreen.m in Sources */,
 				00BE6B062484D6410075A81B /* NSString+MIME.m in Sources */,
 				00BE6AAE2484D6410075A81B /* UIViewController+TopBarMessage.m in Sources */,
 				00BE6A8C2484D6410075A81B /* UIView+Frame.m in Sources */,
@@ -2477,8 +2556,10 @@
 				00BE6AD02484D6410075A81B /* UIImage+OuterCircle.m in Sources */,
 				00BE6A5A2484D6410075A81B /* UIScrollView+APParallaxHeader.m in Sources */,
 				00BE6ADA2484D6410075A81B /* JRSwizzle.m in Sources */,
+				004BD6FA2499933D005A41E3 /* AreaBKSiteInfoModel.m in Sources */,
 				00BE6B402484D6420075A81B /* CAAnimation+EasingEquations.m in Sources */,
 				00BE6B322484D6420075A81B /* NSDate+Reporting.m in Sources */,
+				004BD6DA2498F74C005A41E3 /* NSLayoutConstraint+ForXIB.m in Sources */,
 				00A948F024777FEF002358AB /* ZXBaseImageView.m in Sources */,
 				00BE6A9E2484D6410075A81B /* UIImageView+Reflect.m in Sources */,
 				00BE6AB82484D6410075A81B /* UIViewController+DDPopUpViewController.m in Sources */,
@@ -2544,6 +2625,7 @@
 				00BE6A5E2484D6410075A81B /* UIWindow+Hierarchy.m in Sources */,
 				004BD6A5249877B5005A41E3 /* CustomPaopaoView.m in Sources */,
 				00BE6AD82484D6410075A81B /* SYSafeCategory.m in Sources */,
+				004BD6F224999247005A41E3 /* AreaBKModel.m in Sources */,
 				00BE6B442484D6420075A81B /* CALayer+UIColor.m in Sources */,
 				0065615524977A7700ACFD5A /* UIButton+Submitting.m in Sources */,
 				00BE6AA02484D6410075A81B /* UIImageView+Letters.m in Sources */,
@@ -2558,6 +2640,8 @@
 				00BE6ADC2484D6410075A81B /* NSNotificationCenter+MainThread.m in Sources */,
 				00BE6A4A2484D6410075A81B /* UIImage+RoundedCorner.m in Sources */,
 				00BE6B382484D6420075A81B /* NSDate+Extension.m in Sources */,
+				004BD6ED24998D8F005A41E3 /* JsonFileManager.m in Sources */,
+				004BD6F624999326005A41E3 /* AreaBKPlaceInfoModel.m in Sources */,
 				00BE6A7A2484D6410075A81B /* UIColor+HEX.m in Sources */,
 				00BE6A862484D6410075A81B /* UIView+CustomBorder.m in Sources */,
 				00BE6AEC2484D6410075A81B /* NSString+RegexCategory.m in Sources */,
