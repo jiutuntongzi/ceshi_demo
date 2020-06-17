@@ -37,11 +37,25 @@
     }
 }
 
+- (void)addAnnotationWithViewSecond:(BMKMapView *)mapView WithArray:(NSArray *)array{
+    for (AreaBKPlaceInfoModel *model in array) {
+        BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(model.latitude, model.longitude);
+        annotation.coordinate = center;
+        //设置标注的标题
+        annotation.title = model.name;
+//        //副标题
+        annotation.subtitle = @"";
+        [mapView addAnnotation:annotation];
+    }
+}
+
 #pragma mark - 处理数据
 - (NSDictionary *)configDataWithArray:(NSArray *)array{
     NSMutableArray *numArray = [NSMutableArray new];
-    for (AreaBKModel *model in array) {
-        NSArray *strArray = [model.border componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@";"]];
+    NSArray *dicArray = [NSArray mj_keyValuesArrayWithObjectArray:array];
+    for (NSDictionary *dic in dicArray) {
+        NSArray *strArray = [dic[@"border"] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@";"]];
         [numArray appendObjects:strArray];
     }
     NSMutableArray *subArray1 = [NSMutableArray new];

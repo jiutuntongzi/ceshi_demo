@@ -115,4 +115,8 @@ CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.5 blue
     self.portraitView.image = image;
 }
 
+- (void)hideSubTitle{
+    self.titleLabel.center = CGPointMake(70./2, 70./2);
+    self.subtitleLabel.hidden = YES;
+}
 @end

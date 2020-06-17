@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AreaBKPlaceInfoModel : ZXBaseModel
 
+@property(nonatomic, copy) NSString *border;
 @property(nonatomic, assign) float latitude;
 @property(nonatomic, assign) float longitude;
 @property(nonatomic, copy) NSString *name;
