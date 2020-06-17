@@ -38,7 +38,7 @@
     
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
-        make.height.mas_equalTo(40);
+        make.height.mas_equalTo(KScaleWidth(40));
     }];
 
 //    [self.typeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
