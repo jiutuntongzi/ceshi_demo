@@ -48,6 +48,7 @@
 		004BD6FA2499933D005A41E3 /* AreaBKSiteInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F92499933D005A41E3 /* AreaBKSiteInfoModel.m */; };
 		004BD6FB2499933D005A41E3 /* AreaBKSiteInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6F92499933D005A41E3 /* AreaBKSiteInfoModel.m */; };
 		004BD6FF2499AE73005A41E3 /* ManagerRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD6FE2499AE73005A41E3 /* ManagerRouter.m */; };
+		004BD7052499DFF4005A41E3 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BD7042499DFF4005A41E3 /* MapManager.m */; };
 		004E2FB924722C4200212764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857DD247218D000DE8CFD /* AppDelegate.m */; };
 		004E2FBA24722C4200212764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857EE247218D200DE8CFD /* main.m */; };
 		004E2FBB24722C4200212764 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F857E0247218D000DE8CFD /* SceneDelegate.m */; };
@@ -462,6 +463,8 @@
 		004BD6FD2499AE73005A41E3 /* ManagerRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerRouter.h; sourceTree = "<group>"; };
 		004BD6FE2499AE73005A41E3 /* ManagerRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerRouter.m; sourceTree = "<group>"; };
 		004BD7012499B060005A41E3 /* RouterMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterMacro.h; sourceTree = "<group>"; };
+		004BD7032499DFF4005A41E3 /* MapManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		004BD7042499DFF4005A41E3 /* MapManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		004E2FC524722C4200212764 /* FamilyDesign_ForTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyDesign_ForTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004E2FC624722C4200212764 /* FamilyDesign_ForTest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = FamilyDesign_ForTest.plist; path = "/Users/lyc/Desktop/2020.6月启动项目框架/FamilyDesign/FamilyDesign_ForTest.plist"; sourceTree = "<absolute>"; };
 		004E2FD12472672F00212764 /* ValueMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueMacro.h; sourceTree = "<group>"; };
@@ -933,6 +936,15 @@
 			path = ManagerRouter;
 			sourceTree = "<group>";
 		};
+		004BD7022499DFD0005A41E3 /* MapManager */ = {
+			isa = PBXGroup;
+			children = (
+				004BD7032499DFF4005A41E3 /* MapManager.h */,
+				004BD7042499DFF4005A41E3 /* MapManager.m */,
+			);
+			path = MapManager;
+			sourceTree = "<group>";
+		};
 		004E2FB22472228900212764 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,6 +988,7 @@
 		004E2FCE247265F700212764 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				004BD7022499DFD0005A41E3 /* MapManager */,
 				004BD6FC2499AE40005A41E3 /* ManagerRouter */,
 				004BD6EA24998D57005A41E3 /* ManagerHelp */,
 				004E30032473856900212764 /* OpenUDID */,
@@ -2670,6 +2683,7 @@
 				00BE6B222484D6420075A81B /* NSObject+AddProperty.m in Sources */,
 				00BE6AA42484D6410075A81B /* UIImageView+FaceAwareFill.m in Sources */,
 				0065615F24977A7700ACFD5A /* UIButton+Indicator.m in Sources */,
+				004BD7052499DFF4005A41E3 /* MapManager.m in Sources */,
 				00A948D8247778B8002358AB /* ZXBaseTableViewViewController.m in Sources */,
 				00BE6A7C2484D6410075A81B /* UIColor+Random.m in Sources */,
 				00BE6AC22484D6410075A81B /* UITextField+Blocks.m in Sources */,

@@ -15,6 +15,7 @@
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <BMKLocationkit/BMKLocationComponent.h>
+#import "MapManager.h"
 
 @interface MapViewController ()<BMKMapViewDelegate,BMKLocationManagerDelegate>
 
@@ -23,6 +24,7 @@
 @property(nonatomic, strong) MapView *myMapView;
 @property(nonatomic, strong) MapInfoListView *mapInfoListView;
 @property (nonatomic, strong) BMKMapView *mapView;
+@property(nonatomic, strong) MapManager *mapManager;
 
 @property (nonatomic, strong) BMKUserLocation *userLocation; //当前位置对象
 @property (nonatomic, strong) BMKLocationManager *locationManager; //定位对象
@@ -60,9 +62,9 @@
 }
 
 - (void)initMapUI{
-    _mapView = [[BMKMapView alloc]initWithFrame:self.myMapView.bounds];
+    _mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, KScaleWidth(38), SCREEN_WIDTH, SCREENH_HEIGHT - KScaleWidth(38) - StatusBarAndNavigationBarHeight)];
     _mapView.delegate = self;
-    _mapView.zoomLevel = 5;
+    _mapView.zoomLevel = 11;
 //    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
     //开启定位服务
     [self.locationManager startUpdatingLocation];
@@ -82,21 +84,15 @@
 }
 
 - (void)mapConfig{
-    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
-    annotation.coordinate = CLLocationCoordinate2DMake(39.915, 116.404);
-    //设置标注的标题
-    annotation.title = @"北京";
-    //副标题
-    annotation.subtitle = @"天安门";
-    
-    BMKPointAnnotation* annotation1 = [[BMKPointAnnotation alloc]init];
-    annotation1.coordinate = CLLocationCoordinate2DMake(39.915, 116.504);
-    //设置标注的标题
-    annotation1.title = @"学习";
-    //副标题
-    annotation1.subtitle = @"学习门";
-    [_mapView addAnnotation:annotation];
-    [_mapView addAnnotation:annotation1];
+    NSDictionary *resDic = [self.mapManager configDataWithArray:self.areaModelArray];
+    CGFloat _maxLaValue = [resDic[@"maxLa"] floatValue];
+    CGFloat _maxLoValue = [resDic[@"maxLo"] floatValue];
+    CGFloat _minLaValue = [resDic[@"minLa"] floatValue];
+    CGFloat _minLoValue = [resDic[@"minLo"] floatValue];
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(31.319868, 120.615484);
+    BMKCoordinateRegion limitMapRegion = BMKCoordinateRegionMake(center, BMKCoordinateSpanMake(_maxLaValue - _minLaValue, _maxLoValue - _minLoValue));
+    _mapView.region = limitMapRegion;
+    [self.mapManager addAnnotationWithView:_mapView WithArray:self.areaModelArray];
 }
 - (void)bindViewModel{
     [super bindViewModel];
@@ -157,8 +153,8 @@
         customPopView.frame = CGRectMake(0, 0, 70.f, 70.0f);
         customPopView.layer.cornerRadius = 70./2;
 //        customPopView.image = [UIImage imageNamed:@"dingwei.png"];
-        customPopView.title = @"北京";
-        customPopView.subtitle = @"260套";
+        customPopView.title = annotation.title;
+        customPopView.subtitle = annotation.subtitle;
 
         BMKActionPaopaoView *pView = [[BMKActionPaopaoView alloc] initWithCustomView:customPopView];
         pView.backgroundColor = [UIColor clearColor];
@@ -186,6 +182,13 @@
     }];
 }
 #pragma mark - lazy
+- (MapManager *)mapManager{
+    if (nil == _mapManager) {
+        _mapManager = [[MapManager alloc] init];
+    }
+    return _mapManager;
+}
+
 - (MapView *)myMapView{
     if (nil == _myMapView) {
         _myMapView = [[MapView alloc] initWithViewModel:self.mapViewModel];
