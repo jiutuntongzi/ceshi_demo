@@ -17,6 +17,7 @@
 #import <BMKLocationkit/BMKLocationComponent.h>
 #import "MapManager.h"
 
+
 @interface MapViewController ()<BMKMapViewDelegate,BMKLocationManagerDelegate>
 
 @property(nonatomic, strong) MapViewModel *mapViewModel;
@@ -126,8 +127,58 @@
     [self.mapView updateLocationData:self.userLocation];
 }
 
-- (void)mapview:(BMKMapView *)mapView onLongClick:(CLLocationCoordinate2D)coordinate{
-    
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view{
+    ZXMapInfoType type = ZXMapTypeFirst;
+    //移除上层anno
+    BMKPointAnnotation *point = (BMKPointAnnotation *)view.annotation;
+    [_mapView removeAnnotations:mapView.annotations];
+    for (AreaBKModel *model in self.areaModelArray) {
+        for (AreaBKPlaceInfoModel *placeModel in model.placeInfos) {
+            for (AreaBKSiteInfoModel *siteModel in placeModel.siteInfos) {
+                if (siteModel.latitude == point.coordinate.latitude && siteModel.longitude == point.coordinate.longitude && [siteModel.name isEqualToString:point.title]) {
+                    //属于第一层
+                    type = ZXMapTypeThird;
+                }
+            }
+        }
+    }
+    if (type != ZXMapTypeThird) {
+        for (AreaBKModel *model in self.areaModelArray) {
+            for (AreaBKPlaceInfoModel *placeModel in model.placeInfos) {
+                if (placeModel.latitude == point.coordinate.latitude && placeModel.longitude == point.coordinate.longitude && [placeModel.name isEqualToString:point.title]) {
+                    //属于第一层
+                    type = ZXMapTypeSecond;
+                }
+            }
+        }
+    }
+    if (type != ZXMapTypeThird && type != ZXMapTypeSecond) {
+        for (AreaBKModel *model in self.areaModelArray) {
+            if (model.latitude == point.coordinate.latitude && model.longitude == point.coordinate.longitude && [model.name isEqualToString:point.title]) {
+                //属于第一层
+                type = ZXMapTypeFirst;
+            }
+        }
+    }
+    if (type == ZXMapTypeFirst) {
+        [self.areaModelArray enumerateObjectsUsingBlock:^(AreaBKModel *  obj, NSUInteger idx, BOOL *  stop) {
+            if (obj.latitude == point.coordinate.latitude && obj.longitude == point.coordinate.longitude) {
+                NSDictionary *placeDic = [self.mapManager configDataWithArray:obj.placeInfos];
+                CGFloat _maxLaValue = [placeDic[@"maxLa"] floatValue];
+                CGFloat _maxLoValue = [placeDic[@"maxLo"] floatValue];
+                CGFloat _minLaValue = [placeDic[@"minLa"] floatValue];
+                CGFloat _minLoValue = [placeDic[@"minLo"] floatValue];
+                CLLocationCoordinate2D center = CLLocationCoordinate2DMake(obj.latitude, obj.longitude);
+                BMKCoordinateRegion limitMapRegion = BMKCoordinateRegionMake(center, BMKCoordinateSpanMake(_maxLaValue - _minLaValue, _maxLoValue - _minLoValue));
+                _mapView.region = limitMapRegion;
+                [self.mapManager addAnnotationWithViewSecond:_mapView WithArray:obj.placeInfos];
+                
+            }
+        }];
+    }
+    ZLog(@"%f",point.coordinate.longitude);
+    ZLog(@"%f",point.coordinate.latitude);
+    ZLog(@"%@",point.title);
 }
 
 - (void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
@@ -155,31 +206,33 @@
 //        customPopView.image = [UIImage imageNamed:@"dingwei.png"];
         customPopView.title = annotation.title;
         customPopView.subtitle = annotation.subtitle;
+        customPopView.tag = 11111;
+        [customPopView hideSubTitle];
 
         BMKActionPaopaoView *pView = [[BMKActionPaopaoView alloc] initWithCustomView:customPopView];
         pView.backgroundColor = [UIColor clearColor];
         pView.frame = customPopView.frame;
         annotationView.paopaoView = pView;
+//        annotationView.
         annotationView.selected = YES;
         annotationView.canShowCallout = YES;
         annotationView.calloutOffset = CGPointMake(0, 40);
         annotationView.hidePaopaoWhenSingleTapOnMap = NO;
-        
-        //添加单击手势
-        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesAction)];
-        [customPopView addGestureRecognizer:tapGes];
-        customPopView.userInteractionEnabled = YES;
-        
-        
         return annotationView;
     }
     return nil;
 }
-- (void)tapGesAction{
-    [self.view addSubview:self.mapInfoListView];
-    [UIView animateWithDuration:0.5 animations:^{
-        self.mapInfoListView.frame = CGRectMake(0, 150, SCREEN_WIDTH, SCREENH_HEIGHT);
-    }];
+- (void)tapGesAction:(UITapGestureRecognizer *)tap{
+//    CustomPaopaoView *view = (CustomPaopaoView *)[tap view];
+//    BMKPointAnnotation *p = _mapView.annotations[0];
+//    ZLog(@"%@",view.title);
+//    ZLog(@"%f ---- %f",p.coordinate.latitude,p.coordinate.longitude);
+//    [_mapView zoomIn];
+//    [_mapView zoomIn];
+//    [self.view addSubview:self.mapInfoListView];
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.mapInfoListView.frame = CGRectMake(0, 150, SCREEN_WIDTH, SCREENH_HEIGHT);
+//    }];
 }
 #pragma mark - lazy
 - (MapManager *)mapManager{

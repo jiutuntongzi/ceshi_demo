@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MapManager : NSObject
 
 - (void)addAnnotationWithView:(BMKMapView *)mapView WithArray:(NSArray *)array;
+- (void)addAnnotationWithViewSecond:(BMKMapView *)mapView WithArray:(NSArray *)array;
 - (NSDictionary *)configDataWithArray:(NSArray *)array;
 
 @end
