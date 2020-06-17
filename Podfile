@@ -13,6 +13,8 @@ abstract_target 'Default' do
   pod 'YTKNetwork'  #猿题库网络封装
   pod 'YYKit'
   pod 'Reachability', '~> 3.2'
+  #mgj路由
+  pod 'MGJRouter', '~>0.9.0'
   #弹窗
   pod 'LSTPopView'
   #tabbar
