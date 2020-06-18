@@ -50,7 +50,45 @@
     }
 }
 
+#pragma mark - 添加覆盖区域
+- (void)addPolygonViewWithMapView:(BMKMapView *)mapView andBorderStr:(NSString *)str{
+    NSArray *res = [self configDataWithBorderStr:str];
+    CLLocationCoordinate2D coords[500] = {0};
+    for (int i = 0; i < 500; i++) {
+        if (i >= res.count) {
+            coords[i].latitude = [res[res.count - 1][@"latitude"] floatValue];
+            coords[i].longitude = [res[res.count - 1][@"longitude"] floatValue];
+        }else{
+            coords[i].latitude = [res[i][@"latitude"] floatValue];
+            coords[i].longitude = [res[i][@"longitude"] floatValue];
+        }
+    }
+    BMKPolygon *polygon = [BMKPolygon polygonWithCoordinates:coords count:500];
+    [mapView addOverlay:polygon];
+}
+
 #pragma mark - 处理数据
+- (NSArray *)configDataWithBorderStr:(NSString *)border{
+    NSMutableArray *resArray = [NSMutableArray new];
+    NSMutableArray *numArray = [NSMutableArray new];
+    NSArray *strArray = [border componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@";"]];
+    [numArray appendObjects:strArray];
+    NSMutableArray *subArray1 = [NSMutableArray new];
+    NSMutableArray *subArray2 = [NSMutableArray new];
+    for (NSString *str in numArray) {
+        NSArray *strArray = [str componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        [subArray1 appendObject:strArray[0]];
+        [subArray2 appendObject:strArray[1]];
+    }
+    [subArray1 enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSDictionary *coords = @{@"longitude":obj,@"latitude":subArray2[idx]};
+//        CLLocationCoordinate2D coords = {0};
+//        coords.latitude = [obj floatValue];
+//        coords.longitude = [subArray2[idx] floatValue];
+        [resArray appendObject:coords];
+    }];
+    return resArray.copy;
+}
 - (NSDictionary *)configDataWithArray:(NSArray *)array{
     NSMutableArray *numArray = [NSMutableArray new];
     NSArray *dicArray = [NSArray mj_keyValuesArrayWithObjectArray:array];
