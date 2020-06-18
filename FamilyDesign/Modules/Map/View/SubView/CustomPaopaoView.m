@@ -36,8 +36,12 @@ self.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
 
 - (void)drawInContext:(CGContextRef)context
 {
-CGContextSetLineWidth(context, 2.0);
-CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.5 blue:1 alpha:0.8].CGColor);
+    CGContextSetLineWidth(context, 2.0);
+    if (self.status) {
+        CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
+    }else{
+        CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.5 blue:1 alpha:0.8].CGColor);
+    }
 
     [self getDrawPath:context];
     CGContextFillPath(context);
@@ -65,6 +69,7 @@ CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.5 blue
 
 - (id)initWithFrame:(CGRect)frame
 {
+    self.status = NO;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];

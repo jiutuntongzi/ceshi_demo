@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addAnnotationWithView:(BMKMapView *)mapView WithArray:(NSArray *)array;
 - (void)addAnnotationWithViewSecond:(BMKMapView *)mapView WithArray:(NSArray *)array;
+#pragma mark - 添加覆盖区域
+- (void)addPolygonViewWithMapView:(BMKMapView *)mapView andBorderStr:(NSString *)str;
 - (NSDictionary *)configDataWithArray:(NSArray *)array;
 
 @end

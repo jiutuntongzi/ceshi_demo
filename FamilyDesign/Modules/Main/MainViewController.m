@@ -46,7 +46,6 @@
 - (void)congigInit{
     self.leftBarBtnHidden = YES;
     self.areaArray = [self getJsonData];
-    AreaBKModel *moelq =self.areaArray[0];
 }
 
 - (void)bindViewModel{

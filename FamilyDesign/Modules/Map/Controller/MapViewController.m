@@ -126,61 +126,83 @@
     self.userLocation.location = location.location;
     [self.mapView updateLocationData:self.userLocation];
 }
-
+//气泡点击事件
 - (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view{
-    ZXMapInfoType type = ZXMapTypeFirst;
-    //移除上层anno
-    BMKPointAnnotation *point = (BMKPointAnnotation *)view.annotation;
-    [_mapView removeAnnotations:mapView.annotations];
-    for (AreaBKModel *model in self.areaModelArray) {
-        for (AreaBKPlaceInfoModel *placeModel in model.placeInfos) {
-            for (AreaBKSiteInfoModel *siteModel in placeModel.siteInfos) {
-                if (siteModel.latitude == point.coordinate.latitude && siteModel.longitude == point.coordinate.longitude && [siteModel.name isEqualToString:point.title]) {
-                    //属于第一层
-                    type = ZXMapTypeThird;
+    CustomPaopaoView *cpView = view.paopaoView.subviews[0];
+    cpView.status = YES;
+    [cpView setNeedsDisplay];
+    @weakify(self);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        ZXMapInfoType type = ZXMapTypeFirst;
+            //移除上层anno
+            @strongify(self);
+            BMKPointAnnotation *point = (BMKPointAnnotation *)view.annotation;
+            [self.mapView removeAnnotations:mapView.annotations];
+            for (AreaBKModel *model in self.areaModelArray) {
+                for (AreaBKPlaceInfoModel *placeModel in model.placeInfos) {
+                    for (AreaBKSiteInfoModel *siteModel in placeModel.siteInfos) {
+                        if (siteModel.latitude == point.coordinate.latitude && siteModel.longitude == point.coordinate.longitude && [siteModel.name isEqualToString:point.title]) {
+                            //属于第一层
+                            type = ZXMapTypeThird;
+                        }
+                    }
                 }
             }
-        }
-    }
-    if (type != ZXMapTypeThird) {
-        for (AreaBKModel *model in self.areaModelArray) {
-            for (AreaBKPlaceInfoModel *placeModel in model.placeInfos) {
-                if (placeModel.latitude == point.coordinate.latitude && placeModel.longitude == point.coordinate.longitude && [placeModel.name isEqualToString:point.title]) {
-                    //属于第一层
-                    type = ZXMapTypeSecond;
+            if (type != ZXMapTypeThird) {
+                for (AreaBKModel *model in self.areaModelArray) {
+                    for (AreaBKPlaceInfoModel *placeModel in model.placeInfos) {
+                        if (placeModel.latitude == point.coordinate.latitude && placeModel.longitude == point.coordinate.longitude && [placeModel.name isEqualToString:point.title]) {
+                            //属于第一层
+                            type = ZXMapTypeSecond;
+                        }
+                    }
                 }
             }
-        }
-    }
-    if (type != ZXMapTypeThird && type != ZXMapTypeSecond) {
-        for (AreaBKModel *model in self.areaModelArray) {
-            if (model.latitude == point.coordinate.latitude && model.longitude == point.coordinate.longitude && [model.name isEqualToString:point.title]) {
-                //属于第一层
-                type = ZXMapTypeFirst;
+            if (type != ZXMapTypeThird && type != ZXMapTypeSecond) {
+                for (AreaBKModel *model in self.areaModelArray) {
+                    if (model.latitude == point.coordinate.latitude && model.longitude == point.coordinate.longitude && [model.name isEqualToString:point.title]) {
+                        //属于第一层
+                        type = ZXMapTypeFirst;
+                    }
+                }
             }
-        }
-    }
-    if (type == ZXMapTypeFirst) {
-        [self.areaModelArray enumerateObjectsUsingBlock:^(AreaBKModel *  obj, NSUInteger idx, BOOL *  stop) {
-            if (obj.latitude == point.coordinate.latitude && obj.longitude == point.coordinate.longitude) {
-                NSDictionary *placeDic = [self.mapManager configDataWithArray:obj.placeInfos];
-                CGFloat _maxLaValue = [placeDic[@"maxLa"] floatValue];
-                CGFloat _maxLoValue = [placeDic[@"maxLo"] floatValue];
-                CGFloat _minLaValue = [placeDic[@"minLa"] floatValue];
-                CGFloat _minLoValue = [placeDic[@"minLo"] floatValue];
-                CLLocationCoordinate2D center = CLLocationCoordinate2DMake(obj.latitude, obj.longitude);
-                BMKCoordinateRegion limitMapRegion = BMKCoordinateRegionMake(center, BMKCoordinateSpanMake(_maxLaValue - _minLaValue, _maxLoValue - _minLoValue));
-                _mapView.region = limitMapRegion;
-                [self.mapManager addAnnotationWithViewSecond:_mapView WithArray:obj.placeInfos];
-                
-            }
-        }];
-    }
-    ZLog(@"%f",point.coordinate.longitude);
-    ZLog(@"%f",point.coordinate.latitude);
-    ZLog(@"%@",point.title);
-}
+            if (type == ZXMapTypeFirst) {
+                [self.areaModelArray enumerateObjectsUsingBlock:^(AreaBKModel *  obj, NSUInteger idx, BOOL *  stop) {
+                    if (obj.latitude == point.coordinate.latitude && obj.longitude == point.coordinate.longitude) {
+                        NSDictionary *placeDic = [self.mapManager configDataWithArray:obj.placeInfos];
+                        CGFloat _maxLaValue = [placeDic[@"maxLa"] floatValue];
+                        CGFloat _maxLoValue = [placeDic[@"maxLo"] floatValue];
+                        CGFloat _minLaValue = [placeDic[@"minLa"] floatValue];
+                        CGFloat _minLoValue = [placeDic[@"minLo"] floatValue];
+                        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(obj.latitude, obj.longitude);
+                        BMKCoordinateRegion limitMapRegion = BMKCoordinateRegionMake(center, BMKCoordinateSpanMake(_maxLaValue - _minLaValue, _maxLoValue - _minLoValue));
+        //                _mapView.region = limitMapRegion;
+                        [self.mapView setRegion:limitMapRegion animated:YES];
+                        [self.mapManager addPolygonViewWithMapView:self.mapView andBorderStr:obj.border];
 
+                        [self.mapManager addAnnotationWithViewSecond:self.mapView WithArray:obj.placeInfos];
+                        
+                    }
+                }];
+            }
+    });
+}
+//绘制覆盖区域
+- (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay{
+    if ([overlay isKindOfClass:[BMKPolygon class]]){
+        BMKPolygonView* polygonView = [[BMKPolygonView alloc] initWithOverlay:overlay];
+        polygonView.strokeColor = [[UIColor alloc] initWithRed:0.0 green:0 blue:0.5 alpha:1];
+        polygonView.fillColor = [[UIColor alloc] initWithRed:0 green:1 blue:1 alpha:0.2];
+        polygonView.lineWidth = 2.0;
+        polygonView.lineDashType = YES;
+        return polygonView;
+    }
+    return nil;
+}
+- (void)mapView:(BMKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews{
+    
+}
+//点击地图空白处
 - (void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
     [UIView animateWithDuration:0.5 animations:^{
         self.mapInfoListView.frame = CGRectMake(0, SCREENH_HEIGHT, SCREEN_WIDTH, SCREENH_HEIGHT);
@@ -188,6 +210,7 @@
         [self.mapInfoListView removeFromSuperview];
     }];
 }
+//添加气泡回调
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
     if ([annotation isKindOfClass:[BMKPointAnnotation class]])
     {

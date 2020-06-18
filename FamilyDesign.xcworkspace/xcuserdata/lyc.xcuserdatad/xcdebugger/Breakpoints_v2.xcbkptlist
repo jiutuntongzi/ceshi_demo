@@ -28,7 +28,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "-configDataWithArray:"
+            landmarkName = "-addPolygonViewWithMapView:andBorderStr:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
